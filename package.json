@@ -1,0 +1,27 @@
+{
+  "name": "player-electron",
+  "version": "0.2.5",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NCompass-TV/player-electron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NCompass-TV/player-electron/issues"
+  },
+  "homepage": "https://github.com/NCompass-TV/player-electron#readme",
+  "dependencies": {
+    "electron": "^8.5.5",
+    "socket.io-client": "^2.3.0"
+  }
+}

@@ -1,10 +1,11 @@
 const { app, BrowserWindow } = require('electron');
-const io_client = require('socket.io-client');
-const socket = io_client.connect('http://localhost:3215', {query:'connecting_as=electron'});
+const io = require('socket.io-client');
+const socket = io('http://localhost:3215', {query:'connecting_as=electron'});
 
 // Socket connection to Pi Server
 socket.on('connect', () => {
-	console.log('Connected to Pi Local Socket')
+	console.log('Connected to Pi Local Socket');
+	socket.emit('PP_electron_is_running');
 })
 
 socket.on('LSS_is_electron_running', data => {
@@ -14,17 +15,17 @@ socket.on('LSS_is_electron_running', data => {
 
 function createWindow () {
 	
-  // Create the browser window.
-  let win = new BrowserWindow({
+	// Create the browser window.
+	let win = new BrowserWindow({
 		width: 1920,
 		height: 1080,
 		webPreferences: {
 			nodeIntegration: true
 		}
-  })
+	})
 
 	// and load the index.html of the app.
-	win.loadURL('http://localhost/ui');
+	win.loadURL('http://localhost:4200');
 	win.setFullScreen(true);
 
 	win.webContents.on('render-process-gone', error => {

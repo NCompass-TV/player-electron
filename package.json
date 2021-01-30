@@ -1,6 +1,6 @@
 {
   "name": "player-electron",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "",
   "main": "app.js",
   "directories": {
@@ -22,6 +22,9 @@
   "homepage": "https://github.com/NCompass-TV/player-electron#readme",
   "dependencies": {
     "electron": "^8.5.5",
-    "socket.io-client": "^3.1.0"
+    "socket.io-client": "^2.4.0"
+  },
+  "devDependencies": {
+    "electron-packager": "^15.2.0"
   }
 }

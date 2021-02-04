@@ -25,7 +25,7 @@ function createWindow () {
 	})
 
 	// and load the index.html of the app.
-	win.loadURL('http://localhost:4200');
+	win.loadURL('http://localhost/ui');
 	win.setFullScreen(true);
 
 	win.webContents.on('render-process-gone', error => {
